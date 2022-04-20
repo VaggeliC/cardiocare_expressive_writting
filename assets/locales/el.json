@@ -1,0 +1,108 @@
+{
+  "app": {
+    "title": "CardioCare"
+  },
+  "core": {
+    "header": "Οι σημερινές δράσεις",
+    "questionnaires": "Ερωτηματολόγιο"
+  },
+  "language": {
+    "english": "αγγλικά",
+    "greek": "ελληνικά"
+  },
+  "cognitive": {
+    "gameInstructions": "Οδηγίες Παιχνιδιού",
+    "menu": {
+      "title": "Γνωστική Διέγερση & Εξάσκηση",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    },
+    "gameWord": {
+      "title": "Βρές τη Λέξη",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl.",
+      "defaultLetters": "αβγδεζηθικλμνξοπρστυφχψω",
+      "winsText": "Νίκες",
+      "lossesText": "Ήττες",
+      "winText": "Βρήκες τη λέξη",
+      "lostText": "Προσπάθησε ξανά",
+      "words": {
+        "0": "ΛΕΜΟΝΙ",
+        "1": "ΠΕΠΟΝΙ",
+        "2": "ΜΗΛΟ",
+        "3": "ΣΚΥΛΟΣ",
+        "4": "ΓΑΤΑ",
+        "5": "ΚΙΤΡΟ"
+      }
+    },
+    "gameTicTacToe": {
+      "title": "Τρίλιζα",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl.",
+      "player": "Παίχτης",
+      "opponent": "Αντίπαλος",
+      "winsScoreTitle": "Νίκες Παίχτη",
+      "drawsScoreTitle": "Ισοπαλίες",
+      "lossesScoreTitle": "Νίκες Αντιπάλου",
+      "winsText": "Νίκες",
+      "drawsText": "Ισοπαλίες",
+      "lossesText": "Ήττες",
+      "winText": "Κέρδισες!",
+      "drawText": "Είναι Ισοπαλία",
+      "lostText": "Κέρδισε ο Αντίπαλος",
+      "playerTurn": "Είναι η Σειρά σου",
+      "opponentTurn": "Παίζει ο Αντίπαλος",
+      "gameOver": "Το Παχνίδι Έληξε"
+    },
+    "gameColorBeans": {
+      "title": "Χρωματιστά Φασόλια"
+    },
+    "gameDrawing": {
+      "title": "Ζωγραφική",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    },
+    "gameQuestion": {
+      "title": "Παιχνίδι Ερωτήσεων",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    }
+  },
+  "geriatric": {
+    "menu": {
+      "title": "Εκτίμηση Γηριατρικών Συνδρόμων",
+      "incontinence": "Διαχείριση Ακράτειας",
+      "fallsMitigation": "Μετριασμός Πτώσεων"
+    },
+    "incontinence": {
+      "urinaryTitle": "Ακράτεια Ούρων",
+      "urineTrack": "Καταγραφή Ούρησης",
+      "reminders": "Υπενθυμίσεις",
+      "pelvicFloorExercises": "Ασκήσεις Πυελικού Εδάφους",
+      "minutes": "1-4 ΛΕΠΤΑ Ασκήσεων",
+      "session": "Συνεδρία",
+      "instructions": "Οδηγίες",
+      "details": "Λεπτομερείς οδηγίες & εικόνες σχετικά με ασκήσεις πυελικού εδάφους",
+
+      "urineTrackPage": {
+        "addEvent": "Προσθήκη Συμβάντος",
+        "event": "Συμβάν",
+        "date": "Ημερομηνία",
+        "intensity": "Ένταση",
+        "eventLog": "Ημερολόγιο Συμβάντων",
+        "pickDate": "Επιλογή ημερομηνίας",
+        "urination": "Ούρηση",
+        "leak": "Διαρροή",
+        "urge": "Επείγον",
+        "etc": "Βήχας, Γέλιο, κτλ."
+      },
+
+      "addReminder": {
+        "title": "Υπενθυμίσεις Ασκήσεων",
+        "yourReminders": "Οι υπενθυμίσεις σας",
+        "addReminder": "Προσθήκη Υπενθύμισης",
+        "titleReminder": "Τίτλος",
+        "enterTitle": "Εισάγεται τίτλο",
+        "weekday": "Επιλέξτε ημέρα",
+        "time": "Ώρα",
+        "enterTimeOf": "Εισάγετε ώρα ...",
+        "add": "Προσθήκη"
+      }
+    }
+  }
+}

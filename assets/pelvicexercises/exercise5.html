@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div style="margin-top:50px;"></div>
+    <div class="title" id="title">Press Play</div>
+    <div id="startend" style="display: none;">
+      <button id="start"></button>
+      <button id="end"></button>
+    </div>
+    <div id="repetition"></div>
+    <div id="progress-container">
+      <div id="progress">
+        <div id="indicator"></div>
+      </div>
+    </div>
+    <div class='container'>
+      <!--<a href='#'class='playBut' id="playBut" onclick="repetitions(3,50,'80%',2)">-->
+        <a href='#'class='playBut' id="playBut" onclick="repetitions(10,50,'80%',2,'true',10)"> 
+        
+    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+    <svg version="1.1" x="0px" y="0px" width="15%" height="15%" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
+       xml:space="preserve">
+    <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+      73.5,62.5 148.5,105.8 73.5,149.1 "/> 
+    <circle class='circle' id="XMLID_17_" fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/>
+    </svg>
+    
+    
+        
+      </a>
+
+      <button type="button" style="visibility:hidden;" id="testcontractions" onclick="startProgressBar(50,'80%',2);"></button>
+      <button type="button" style="visibility:hidden;" id="strengthcontractions" onclick="startProgressBar(50,'100%',6);"></button>
+      
+    </div>
+
+    <div id="controls">
+      
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
