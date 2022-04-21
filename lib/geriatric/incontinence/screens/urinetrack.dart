@@ -60,7 +60,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
           backgroundColor: AppTheme.background,
          // automaticallyImplyLeading: false,
           centerTitle: true,
-          title: Text('geriatric.incontinence.urineTrack',style: TextStyle(fontSize:25, color: AppTheme.black),).tr(),
+          title: Text('geriatric.expressive_writing.urineTrack',style: TextStyle(fontSize:25, color: AppTheme.black),).tr(),
 /*         shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(15),
@@ -105,7 +105,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
                             
                           
                           ),),
-                            child: Text('geriatric.incontinence.urineTrackPage.addEvent',style: TextStyle(fontSize: 25),).tr(),
+                            child: Text('geriatric.expressive_writing.urineTrackPage.addEvent',style: TextStyle(fontSize: 25),).tr(),
                 
                             onPressed: () {
                               _openPopup(context);
@@ -117,9 +117,9 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
                     dataTextStyle: TextStyle(fontSize: 20,color: AppTheme.black,),
                     headingTextStyle:TextStyle(fontSize: 23,color: AppTheme.black,fontWeight: FontWeight.bold,),
                     columns: [
-                      DataColumn(label: Text('geriatric.incontinence.urineTrackPage.event', ).tr()),
-                      DataColumn(label: Text('geriatric.incontinence.urineTrackPage.date',).tr()),
-                      DataColumn(label: Text('geriatric.incontinence.urineTrackPage.intensity',).tr()),
+                      DataColumn(label: Text('geriatric.expressive_writing.urineTrackPage.event', ).tr()),
+                      DataColumn(label: Text('geriatric.expressive_writing.urineTrackPage.date',).tr()),
+                      DataColumn(label: Text('geriatric.expressive_writing.urineTrackPage.intensity',).tr()),
                     ],
                     rows: dataRows,
                   ),
@@ -131,7 +131,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
   _openPopup(context) {
     Alert(
         context: context,
-        title: "geriatric.incontinence.urineTrackPage.eventLog".tr(),
+        title: "geriatric.expressive_writing.urineTrackPage.eventLog".tr(),
         content: StatefulBuilder(
             // ignore: missing_return
             builder: (BuildContext context, StateSetter setState) {
@@ -139,7 +139,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
             children: <Widget>[
                DropdownButtonFormField(
                  itemHeight:80,
-                decoration: InputDecoration(labelText: 'geriatric.incontinence.urineTrackPage.event'.tr(),labelStyle: TextStyle(fontSize:25)),
+                decoration: InputDecoration(labelText: 'geriatric.expressive_writing.urineTrackPage.event'.tr(),labelStyle: TextStyle(fontSize:25)),
                 hint: _dropDownValueEvent == null
                     ? Text('Select Event')
                     : Text(
@@ -148,10 +148,10 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
                       ),
                 isExpanded: true,
                 style: TextStyle(color: AppTheme.black,fontSize: 20),
-                items: ['geriatric.incontinence.urineTrackPage.urination'.tr(),
-                        'geriatric.incontinence.urineTrackPage.leak'.tr(),
-                        'geriatric.incontinence.urineTrackPage.urge'.tr(),
-                        'geriatric.incontinence.urineTrackPage.etc'.tr()].map(
+                items: ['geriatric.expressive_writing.urineTrackPage.urination'.tr(),
+                        'geriatric.expressive_writing.urineTrackPage.leak'.tr(),
+                        'geriatric.expressive_writing.urineTrackPage.urge'.tr(),
+                        'geriatric.expressive_writing.urineTrackPage.etc'.tr()].map(
                   (valE) {
                     // print(_dropDownValue.toString());
                     return DropdownMenuItem<String>(
@@ -172,7 +172,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
               TextField(
                   controller: Date,
                   decoration: InputDecoration(
-                    hintText: "geriatric.incontinence.urineTrackPage.pickDate".tr(),
+                    hintText: "geriatric.expressive_writing.urineTrackPage.pickDate".tr(),
                     hintStyle: TextStyle(fontSize: 25),
                     labelStyle: TextStyle(fontSize: 25),
                     icon: Icon(Icons.date_range),
@@ -225,7 +225,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
                     }
             }),*/
               DropdownButtonFormField(
-                decoration: InputDecoration(labelText: 'geriatric.incontinence.urineTrackPage.intensity'.tr(),labelStyle: TextStyle(fontSize:25)),
+                decoration: InputDecoration(labelText: 'geriatric.expressive_writing.urineTrackPage.intensity'.tr(),labelStyle: TextStyle(fontSize:25)),
                 hint: _dropDownValue == null
                     ? Text('Pick Intensity')
                     : Text(
@@ -277,7 +277,7 @@ class _UrineTrackPageState extends State<UrineTrackPage> {
               Navigator.of(context, rootNavigator: true).pop();
             },
             child: Text(
-              "geriatric.incontinence.urineTrackPage.addEvent",
+              "geriatric.expressive_writing.urineTrackPage.addEvent",
               style: TextStyle(color: AppTheme.white, fontSize: 25),
             ).tr(),
           )

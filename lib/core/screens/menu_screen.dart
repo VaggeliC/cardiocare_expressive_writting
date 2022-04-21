@@ -1,3 +1,4 @@
+import 'package:cardiocare_expressive_writting/psychology/menu/screens/psychology_menu_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/buttons/card_button.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/grids/card_grid.dart';
@@ -158,7 +159,13 @@ class MenuScreen extends StatelessWidget {
                       ),
 
                       CardButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) =>
+                                      PsychologyMenuScreen())));
+                        },
                         label: 'Psychology\n& \nWellbeing',
                         labelSize: 19,
                         primaryColor: AppTheme.purple,

@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+const kBlueColor = Color(0xFF817DC0);
+const kShadowColor = Color(0xFFE6E6E6);
+final kShadowColor2 = const Color(0xFFD3D3D3).withOpacity(.84);
+const stressStart = Color(0xFFc2185b);
+const stressEnd = Color(0xFFc92952);
+const depressionStart = Color(0xFF1E1466);
+const angerStart = Color(0xFFD86D30);
+const angerEnd= Color(0xFFf27710);
+const distressStart = Color(0xFF5d3d91);
+const distressEnd = Color(0xFF786696);
+const helpStart = Color(0xFF2b8a68);
+const helpEnd = Color(0xFF36ad83);
+const stepsText = Color(0xFF2633C5);
+const sleepColor = Color(0xFF87A0E5);
+const caloriesColor = Color(0xFFF56E98);
+const activityColor = Color(0xFFF1B440);
+const menuBlack = Color(0xFF000000);
+const menuBlue = Color(0xFF42A5F5);
+const drawerColor = Color(0xFFEDF0F2);

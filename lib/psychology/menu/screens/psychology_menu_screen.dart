@@ -1,14 +1,15 @@
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/expressive_writing_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/buttons/card_button.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/grids/card_grid.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/panels/title_panel.dart';
 import 'package:cardiocare_expressive_writting/cognitive/common/widgets/screen_layout.dart';
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
-import 'package:cardiocare_expressive_writting/geriatric/incontinence/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
-class GeriatricMenuScreen extends StatelessWidget {
-  const GeriatricMenuScreen({Key? key}) : super(key: key);
+
+class PsychologyMenuScreen extends StatelessWidget {
+  const PsychologyMenuScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +40,18 @@ class GeriatricMenuScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => HomeScreen())));
+                            builder: ((context) => ExpressiveWritingScreen())));
                   },
                   icon: Icons.create_sharp,
                   label: 'geriatric.menu.expressive_writing'.tr(),
                   primaryColor: AppTheme.green,
                 ),
-                CardButton(
-                  onPressed: () {},
-                  icon: Icons.directions_walk,
-                  label: 'Falls Mitigation',
-                  primaryColor: AppTheme.purple,
-                ),
+                // CardButton(
+                //   onPressed: () {},
+                //   icon: Icons.directions_walk,
+                //   label: 'Falls Mitigation',
+                //   primaryColor: AppTheme.purple,
+                // ),
               ],
             ))
           ],

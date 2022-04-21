@@ -1,23 +1,22 @@
-// ignore_for_file: prefer_const_constructors
+// TODO Implement this library.// ignore_for_file: prefer_const_constructors
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/form_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../core/utilities/app_theme.dart';
 import '../../../core/widgets/language_button.dart';
-import '../../incontinence/screens/urinetrack.dart';
-import '../screens/reminders_page.dart';
+import '../screens/ew_reminders_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import './pelvicexercises.dart';
 import '../utilities/constantscolors.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ExpressiveWritingScreen extends StatefulWidget {
+  const ExpressiveWritingScreen({Key? key}) : super(key: key);
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ExpressiveWritingScreenState createState() => _ExpressiveWritingScreenState();
 }
 
 // Drawer kai metavash sthn demographics page mas.
-class _HomeScreenState extends State<HomeScreen>{
+class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
   // Initiate ta dedomena poy diavasame apo ta 2 json(heart_rate_reads & responses_calories_read)
   // Auto ginetai edw mesw tis initState gia na mporoume na ta "Exoume" kai meta stis alles klaseis
   // poy kanoume navigate + oti ta xreiazomaste apo to homescreen gia na exoume ta graphs synced me vash ta JSON
@@ -179,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen>{
                               context,
                               MaterialPageRoute(
                                   builder: ((context) =>
-                                      UrineTrackPage())));
+                                      FormWidgetsDemo())));
                         }
                       }),
                 ),
@@ -282,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen>{
                             MaterialPageRoute(
                                 builder: ((context) =>
 
-                                    ReminderPage())));
+                                    EWReminderPage())));
                         //Navigator.pushReplacementNamed(context, '/details');
                         }),
                 ),
@@ -315,7 +314,7 @@ class _HomeScreenState extends State<HomeScreen>{
                                             ),
                             ),
                             ),
-                    
+
                   ),    */
           SafeArea(
             child: Padding(
@@ -337,103 +336,7 @@ class _HomeScreenState extends State<HomeScreen>{
                       style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
                     ).tr(),
                      SizedBox(height: 10),
-                    Wrap(
-                      spacing: 20,
-                      runSpacing: 20,
-                      children: <Widget>[
-                        SeassionCard(
-                            seassionNum: 1,
-                            isDone: true,
-                            color1: AppTheme.darkGrey,
-                            color2: AppTheme.green,
-                            txt: "geriatric.expressive_writing.session",
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const PelvicExercises(
-                                        exercisenumber: "1")),
-                              );
-                            }
-                            //Navigator.pushReplacementNamed(context, '/pelvicexercises');},
-                            ),
-                        SeassionCard(
-                          seassionNum: 2,
-                          isDone: true,
-                          color1: AppTheme.green,
-                          color2:AppTheme.green,
-                          txt: "geriatric.expressive_writing.session",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PelvicExercises(
-                                      exercisenumber: "2")),
-                            );
-                          },
-                        ),
-                        SeassionCard(
-                          seassionNum: 3,
-                          isDone: true,
-                          color1: AppTheme.green,
-                          color2: AppTheme.purple,
-                          txt: "geriatric.expressive_writing.session" ,
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PelvicExercises(
-                                      exercisenumber: "3")),
-                            );
-                          },
-                        ),
-                        SeassionCard(
-                          seassionNum: 4,
-                          isDone: true,
-                          color1:AppTheme.purple,
-                          color2: AppTheme.blue,
-                          txt: "geriatric.expressive_writing.session",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PelvicExercises(
-                                      exercisenumber: "4")),
-                            );
-                          },
-                        ),
-                        SeassionCard(
-                          seassionNum: 5,
-                          isDone: true,
-                          color1: AppTheme.blue,
-                          color2: AppTheme.red,
-                          txt: "geriatric.expressive_writing.session",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PelvicExercises(
-                                      exercisenumber: "5")),
-                            );
-                          },
-                        ),
-                        SeassionCard(
-                          seassionNum: 6,
-                          isDone: true,
-                          color1: AppTheme.red ,
-                          color2: AppTheme.orange,
-                          txt: "geriatric.expressive_writing.session",
-                          press: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const PelvicExercises(
-                                      exercisenumber: "6")),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
+
                        SizedBox(height: 10),
                     Text("geriatric.expressive_writing.instructions",
                         style: Theme.of(context)
@@ -542,7 +445,7 @@ class _HomeScreenState extends State<HomeScreen>{
                              padding: const EdgeInsets.all(0.0),
                           ),
                           onPressed: () {},
-                          
+
                           child: Ink(
                             decoration: BoxDecoration(
                                 gradient: const LinearGradient(colors: [Color(0xFFEDF0F2), Color(0xFF2b8a68)],
@@ -564,7 +467,7 @@ class _HomeScreenState extends State<HomeScreen>{
                             ),
                           ),
                         ),
-                      
+
 
                   ElevatedButton(onPressed: (){ Navigator.pushReplacementNamed(context, '/urinetrack');}, child: const Text('Urine Track'),),
                   ElevatedButton(onPressed: (){ Navigator.pushReplacementNamed(context, '/pelvicexercises');}, child: const Text('Pelvic Floor Exercises'),),

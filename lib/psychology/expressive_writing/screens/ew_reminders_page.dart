@@ -11,16 +11,16 @@ import '../../../core/widgets/language_button.dart';
 import '../services/data.dart';
 import '../services/notification_api.dart';
 import '../widgets/alarm_tile.dart';
-import 'add_reminder.dart';
+import 'ew_add_reminder.dart';
 
-class ReminderPage extends StatefulWidget {
-  const ReminderPage({Key? key}) : super(key: key);
+class EWReminderPage extends StatefulWidget {
+  const EWReminderPage({Key? key}) : super(key: key);
 
   @override
-  State<ReminderPage> createState() => _ReminderPageState();
+  State<EWReminderPage> createState() => _EWReminderPageState();
 }
 
-class _ReminderPageState extends State<ReminderPage> {
+class _EWReminderPageState extends State<EWReminderPage> {
   final onNotifications = BehaviorSubject<String?>();
 
 
@@ -87,7 +87,7 @@ class _ReminderPageState extends State<ReminderPage> {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              content: AddReminder(),
+              content: EWAddReminder(),
             ),
           );
         },

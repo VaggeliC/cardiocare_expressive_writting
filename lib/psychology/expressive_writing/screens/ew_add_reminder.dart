@@ -16,12 +16,12 @@ import '../widgets/my_input_field.dart';
 
 List<bool> findRemindedDays = [];
 
-class AddReminder extends StatefulWidget {
+class EWAddReminder extends StatefulWidget {
   @override
-  State<AddReminder> createState() => _AddReminderState();
+  State<EWAddReminder> createState() => _EWAddReminderState();
 }
 
-class _AddReminderState extends State<AddReminder> {
+class _EWAddReminderState extends State<EWAddReminder> {
   List<bool> listOfBools = List.filled(7, false);
 
   List<String> listOfBoolsconverted = [];
