@@ -19,7 +19,7 @@ class PsychologyMenuScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TitlePanel(title: 'geriatric.menu.title'.tr()),
+              TitlePanel(title: 'psychology.menu.title'.tr()),
             ]),
         SizedBox(
           height: 150,
@@ -43,7 +43,7 @@ class PsychologyMenuScreen extends StatelessWidget {
                             builder: ((context) => ExpressiveWritingScreen())));
                   },
                   icon: Icons.create_sharp,
-                  label: 'geriatric.menu.expressive_writing'.tr(),
+                  label: 'psychology.menu.expressiveWriting'.tr(),
                   primaryColor: AppTheme.green,
                 ),
                 // CardButton(

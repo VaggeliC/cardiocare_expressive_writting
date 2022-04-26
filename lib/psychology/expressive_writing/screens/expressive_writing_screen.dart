@@ -1,13 +1,15 @@
 // TODO Implement this library.// ignore_for_file: prefer_const_constructors
-import 'package:cardiocare_expressive_writting/psychology/expressive_writing/form_widgets.dart';
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/form_widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../core/utilities/app_theme.dart';
 import '../../../core/widgets/language_button.dart';
+import '../../../geriatric/incontinence/screens/pelvicexercises.dart';
+import '../../../geriatric/incontinence/screens/reminders_page.dart';
+import '../../../geriatric/incontinence/screens/urinetrack.dart';
 import '../screens/ew_reminders_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../utilities/constantscolors.dart';
-
 
 class ExpressiveWritingScreen extends StatefulWidget {
   const ExpressiveWritingScreen({Key? key}) : super(key: key);
@@ -49,17 +51,17 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
           ),
           LanguageButton()
         ],
-      //  iconTheme: const IconThemeData(color: Color(0xFF17262A)),
+        //  iconTheme: const IconThemeData(color: Color(0xFF17262A)),
         iconTheme: const IconThemeData(color: AppTheme.black),
 
         backgroundColor: AppTheme.background,
         // automaticallyImplyLeading: false,
         centerTitle: true,
         title:  Text(
-          'geriatric.expressive_writing.urinaryTitle',
+          'psychology.expressiveWriting.urinaryTitle',
           style: TextStyle(fontSize: 25, color: AppTheme.black),
         ).tr(),
-      /*  shape: const RoundedRectangleBorder(
+        /*  shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(15),
           ),
@@ -137,9 +139,9 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                               child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                     Padding(
+                                    Padding(
                                       padding: EdgeInsets.all(5.0),
-                                      child: Text('geriatric.expressive_writing.urineTrack',
+                                      child: Text('psychology.expressiveWriting.urineTrack',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
 
@@ -158,11 +160,11 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                                       child: Container(
                                         height: 95,
                                         width: MediaQuery.of(context).size.height /
-                                              9,
+                                            9,
                                         decoration: const BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
-                                                "assets/images_incontinence/track.png"),
+                                                "assets/images_incontinence/type.png"),
                                             fit: BoxFit.fitHeight,
                                             alignment: Alignment.center,
                                           ),
@@ -240,9 +242,9 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                               child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                     Padding(
+                                    Padding(
                                       padding: EdgeInsets.all(6.0),
-                                      child: Text('geriatric.expressive_writing.reminders',
+                                      child: Text('psychology.expressiveWriting.reminders',
                                           style: TextStyle(
                                               letterSpacing: 1.0,
                                               color: AppTheme
@@ -260,7 +262,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                                       child: Container(
                                         height: 95,
                                         width: MediaQuery.of(context).size.height /
-                                              9,
+                                            9,
                                         decoration:  BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(
@@ -283,7 +285,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
 
                                     EWReminderPage())));
                         //Navigator.pushReplacementNamed(context, '/details');
-                        }),
+                      }),
                 ),
               ],
             ),
@@ -326,30 +328,36 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                     /* SizedBox(
                               height: size.height * 0.05,
                             ),*/
-                    Text("geriatric.expressive_writing.pelvicFloorExercises",
+                    Text("psychology.expressiveWriting.pelvicFloorExercises",
                         style: Theme.of(context)
                             .textTheme
                             .headline6!
                             .copyWith(fontWeight: FontWeight.bold,fontSize:25)).tr(),
-                     SizedBox(height: 10),
-                     Text("geriatric.expressive_writing.minutes",
+                    SizedBox(height: 10),
+                    Text("psychology.expressiveWriting.minutes",
                       style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
                     ).tr(),
-                     SizedBox(height: 10),
+                    SizedBox(height: 10),
+                    Wrap(
+                      spacing: 20,
+                      runSpacing: 20,
+                      children: <Widget>[
 
-                       SizedBox(height: 10),
-                    Text("geriatric.expressive_writing.instructions",
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text("psychology.expressiveWriting.instructions",
                         style: Theme.of(context)
                             .textTheme
                             .bodyText1!
                             .copyWith(fontWeight: FontWeight.bold,fontSize: 25)).tr(),
-                     SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Stack(
                       children: <Widget>[
                         Container(
                           margin:  EdgeInsets.symmetric(vertical: 10),
                           padding:  EdgeInsets.all(10),
-                          height: 110,
+                          height: 280,
                           decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
                               BoxShadow(
@@ -378,7 +386,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                               Expanded(
                                 child: Column(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                  MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     //   Text(
@@ -394,7 +402,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                                             ),
                                             */
                                     Text(
-                                        "geriatric.expressive_writing.details",
+                                        "psychology.expressiveWriting.details",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText2!.copyWith(fontSize: 20)).tr()
@@ -418,10 +426,10 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
                         ),
                         Positioned(
                           top: 0,
-                          left: 5,
+                          left: 2,
                           child: SizedBox(
-                            width: 50,
-                            height: 50,
+                            width: 40,
+                            height: 40,
                             child: Image.asset('assets/images_incontinence/about2.png'),
                           ),
                         )
@@ -485,7 +493,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen>{
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(60.0)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(60.0)),
           padding: const EdgeInsets.all(0.0),
         ),
         onPressed: () {
@@ -568,9 +576,9 @@ class SeassionCard extends StatelessWidget {
                       decoration: BoxDecoration(
                         gradient: isDone
                             ? LinearGradient(
-                                colors: [color1, color2])
+                            colors: [color1, color2])
                             : const LinearGradient(
-                                colors: [AppTheme.white, AppTheme.white]),
+                            colors: [AppTheme.white, AppTheme.white]),
                         color: isDone ? AppTheme.blue : AppTheme.white,
                         shape: BoxShape.circle,
                         //border: Border.all(color: kBlueColor),
@@ -585,8 +593,8 @@ class SeassionCard extends StatelessWidget {
                     Text(txt, style: const TextStyle(fontSize: 20)).tr(),
                     Text(" $seassionNum",
                         style: const TextStyle(fontSize: 20)
-                        // style: Theme.of(context).textTheme.subtitle1,
-                        )
+                      // style: Theme.of(context).textTheme.subtitle1,
+                    )
                   ],
                 ),
               ),

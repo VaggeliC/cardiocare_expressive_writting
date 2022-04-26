@@ -52,7 +52,7 @@ class _EWReminderPageState extends State<EWReminderPage> {
           backgroundColor: AppTheme.background,
          // automaticallyImplyLeading: false,
         centerTitle: true,
-          title: Text('geriatric.expressive_writing.addReminder.title',style: TextStyle(color: AppTheme.black),).tr(),
+          title: Text('psychology.expressiveWriting.addReminder.title',style: TextStyle(color: AppTheme.black),).tr(),
      /*    shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(15),
@@ -66,7 +66,7 @@ class _EWReminderPageState extends State<EWReminderPage> {
                 width: double.infinity,
                 padding: EdgeInsets.all(20),
                 alignment: Alignment.centerLeft,
-                color: Colors.blueGrey[500], 
+                color: Colors.blueGrey[500],
                 // decoration:BoxDecoration(color:Colors.blue), διαφορετικος τροπος να περασουμε χρωμα
                 child: Text(
                   "Cardiocare",
@@ -77,8 +77,8 @@ class _EWReminderPageState extends State<EWReminderPage> {
                 ),
               ),
               ListTile(title:Text("Home"), leading: Icon(Icons.home), onTap:(){Navigator.pushReplacementNamed(context, '/home_screen');}),
-              
-              
+
+
             ],
           ),
          ),*/
@@ -101,7 +101,7 @@ class _EWReminderPageState extends State<EWReminderPage> {
         children: [
           SizedBox(height: 20.0,),
           Text(
-            'geriatric.expressive_writing.addReminder.yourReminders'.tr(),
+            'psychology.expressiveWriting.addReminder.yourReminders'.tr(),
             style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.bold,

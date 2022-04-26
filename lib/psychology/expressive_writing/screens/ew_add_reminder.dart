@@ -43,22 +43,22 @@ class _EWAddReminderState extends State<EWAddReminder> {
         child: Column(
           children: [
             Text(
-              'geriatric.expressive_writing.addReminder.addReminder'.tr(),
+              'psychology.expressiveWriting.addReminder.addReminder'.tr(),
               style: TextStyle(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             MyInputField(
-              title: 'geriatric.expressive_writing.addReminder.titleReminder'.tr(),
-              hint: 'geriatric.expressive_writing.addReminder.enterTitle'.tr(),
+              title: 'psychology.expressiveWriting.addReminder.titleReminder'.tr(),
+              hint: 'psychology.expressiveWriting.addReminder.enterTitle'.tr(),
               controller: _textEditingController,
             ),
             SizedBox(
               height: 10.0,
             ),
             Text(
-              'geriatric.expressive_writing.addReminder.weekday',
+              'psychology.expressiveWriting.addReminder.weekday',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -74,9 +74,9 @@ class _EWAddReminderState extends State<EWAddReminder> {
               values: listOfBools,
             ),
             MyInputField(
-              title: 'geriatric.expressive_writing.addReminder.time'.tr(),
+              title: 'psychology.expressiveWriting.addReminder.time'.tr(),
               // hint: _startTime,
-              hint: 'geriatric.expressive_writing.addReminder.enterTimeOf'.tr(),
+              hint: 'psychology.expressiveWriting.addReminder.enterTimeOf'.tr(),
               controller: _timeController,
               widget: IconButton(
                 onPressed: () {
@@ -133,7 +133,7 @@ class _EWAddReminderState extends State<EWAddReminder> {
                 }
               },
               child: Text(
-                'geriatric.expressive_writing.addReminder.add',
+                'psychology.expressiveWriting.addReminder.add',
                 style: TextStyle(
                   color: AppTheme.white,fontSize: 28,
                 ),

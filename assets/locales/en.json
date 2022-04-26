@@ -102,6 +102,45 @@
         "add": "Add"
       }
     }
+  },
+  "psychology": {
+    "menu": {
+      "title": "Psychology & Wellbeing",
+      "expressiveWriting": "Expressive Writing"
+    },
+    "expressiveWriting": {
+      "urinaryTitle": "Expressive Writing",
+      "urineTrack": "Start Writing",
+      "reminders": "Reminders",
+      "pelvicFloorExercises": "How to start writing",
+      "minutes": "Duration: 5-10 Minutes",
+      "session": "Session",
+      "instructions": "Instructions",
+      "details": "To start, plan to spend at least 5-10 minutes (or longer, if you want) writing about one of the topics below. The basic instructions are for you to write about your deepest thoughts and feelings about the topic without worrying about spelling, grammar, or sentence structure. Just write.",
+      "urineTrackPage": {
+        "addEvent": "Add Event",
+        "event": "Event",
+        "date": "Date",
+        "eventLog": "Event Log",
+        "intensity": "Intensity",
+        "pickDate": "Pick the date",
+        "urination": "Urination",
+        "leak": "Leak",
+        "urge": "Urge",
+        "etc": "Cough, Laugh, etc."
+      },
+      "addReminder": {
+        "title": "Pelvic Floor Reminders",
+        "yourReminders": "Your Reminders",
+        "addReminder": "Add Reminder",
+        "titleReminder": "Title",
+        "enterTitle": "Enter title",
+        "weekday": "Choose Weekday",
+        "time": "Time",
+        "enterTimeOf": "Enter Time Of ...",
+        "add": "Add"
+      }
+    }
   }
 }
 

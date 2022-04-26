@@ -104,5 +104,45 @@
         "add": "Προσθήκη"
       }
     }
+  },
+  "psychology": {
+    "menu": {
+      "title": "Ψυχολογία & Ευεξία ",
+      "expressiveWriting": "Εκφραστική Γραφή"
+    },
+    "expressiveWriting": {
+      "urinaryTitle": "Ακράτεια Ούρων",
+      "urineTrack": "Καταγραφή Ούρησης",
+      "reminders": "Υπενθυμίσεις",
+      "pelvicFloorExercises": "Ασκήσεις Πυελικού Εδάφους",
+      "minutes": "1-4 ΛΕΠΤΑ Ασκήσεων",
+      "session": "Συνεδρία",
+      "instructions": "Οδηγίες",
+      "details": "Λεπτομερείς οδηγίες & εικόνες σχετικά με ασκήσεις πυελικού εδάφους",
+
+      "urineTrackPage": {
+        "addEvent": "Προσθήκη Συμβάντος",
+        "event": "Συμβάν",
+        "date": "Ημερομηνία",
+        "intensity": "Ένταση",
+        "eventLog": "Ημερολόγιο Συμβάντων",
+        "pickDate": "Επιλογή ημερομηνίας",
+        "urination": "Ούρηση",
+        "leak": "Διαρροή",
+        "urge": "Επείγον",
+        "etc": "Βήχας, Γέλιο, κτλ."
+      },
+      "addReminder": {
+        "title": "Υπενθυμίσεις Ασκήσεων",
+        "yourReminders": "Οι υπενθυμίσεις σας",
+        "addReminder": "Προσθήκη Υπενθύμισης",
+        "titleReminder": "Τίτλος",
+        "enterTitle": "Εισάγεται τίτλο",
+        "weekday": "Επιλέξτε ημέρα",
+        "time": "Ώρα",
+        "enterTimeOf": "Εισάγετε ώρα ...",
+        "add": "Προσθήκη"
+      }
+    }
   }
 }
