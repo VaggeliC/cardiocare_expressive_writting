@@ -7,7 +7,6 @@ import 'package:cardiocare_expressive_writting/cognitive/common/widgets/screen_l
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
 import 'package:flutter/material.dart';
 
-
 class PsychologyMenuScreen extends StatelessWidget {
   const PsychologyMenuScreen({Key? key}) : super(key: key);
 
@@ -22,9 +21,46 @@ class PsychologyMenuScreen extends StatelessWidget {
               TitlePanel(title: 'psychology.menu.title'.tr()),
             ]),
         SizedBox(
-          height: 150,
+          height: 20,
         ),
-
+        SizedBox(
+          child: Text(
+            'Feeling overwhelmed by the Cancer? \n\n               Expressive Writing can Help',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          ),
+          height: 100,
+        ),
+        SizedBox(
+          child: Text(
+            '\nWhat is Expressive Writing?',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+          //height: 100,
+        ),
+        SizedBox(
+          child: Text(
+            '\nExpressive writing is easy. Just sit down and write about something that is bothering you. It’s simple and there is no right or wrong way to do it.\n\nThis application gives you some ways to try out expressive writing to help you deal with the Cancer outbreak. By writing about your thoughts and feelings for as little as 5-10 minutes, you may change the ways you are thinking, feeling, and even sleeping.',
+            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
+          ),
+          //height: 100,
+        ),
+        SizedBox(
+          child: Text(
+            '\nWhat are the Benefits of Expressive Writing?',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+          //height: 100,
+        ),
+        SizedBox(
+          child: Text(
+            '\nExpressive writing has been around for over 30 years. Hundreds of experiments have demonstrated its effectiveness in improving people’s mental and physical health. By putting emotional upheavals into words, we start to understand them better. Once we have a better handle on our problems, we can move forward and get on with life.\n\nThese pages were designed as coping tools for people who are trying to deal with the Cancer outbreak. In reality, expressive writing can work for any issues you may be thinking or worrying about - major or minor.',
+            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
+          ),
+          //height: 100,
+        ),
+        SizedBox(
+          height: 20,
+        ),
         // card grid
         Expanded(
             child: Column(
@@ -32,7 +68,7 @@ class PsychologyMenuScreen extends StatelessWidget {
           children: [
             Expanded(
                 child: CardGrid(
-              portraitCells: 2,
+              portraitCells: 1,
               // spacing: 8,
               children: [
                 CardButton(

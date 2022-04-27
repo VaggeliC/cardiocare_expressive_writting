@@ -2,9 +2,16 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
+import 'package:cardiocare_expressive_writting/core/widgets/language_button.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'dart:async';
+import 'package:cardiocare_expressive_writting/core/widgets/app.dart';
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/services/data.dart';
+
+import '../utilities/constantscolors.dart';
 
 class FormWidgetsDemo extends StatefulWidget {
   const FormWidgetsDemo({Key? key}) : super(key: key);
@@ -61,103 +68,138 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: drawerColor,
       appBar: AppBar(
-        title: const Text('Expressive Writing'),
+        actions: [
+          IconButton(
+            padding: EdgeInsets.all(0),
+            onPressed: () {},
+            icon: Icon(Icons.notifications),
+            color: AppTheme.black,
+            iconSize: 32,
+          ),
+          LanguageButton()
+        ],
+        //  iconTheme: const IconThemeData(color: Color(0xFF17262A)),
+        iconTheme: const IconThemeData(color: AppTheme.black),
+
+        backgroundColor: AppTheme.background,
+        // automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text(
+          'psychology.expressiveWriting.urinaryTitle',
+          style: TextStyle(fontSize: 25, color: AppTheme.black),
+        ).tr(),
+        /*  shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(15),
+          ),
+        ),*/
       ),
       body: Form(
         key: _formKey,
         child: Scrollbar(
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: Card(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 400),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ...[
-                        _FormDatePicker(
-                          date: date,
-                          onChanged: (value) {
-                            setState(() {
-                              date = value;
-                            });
-                          },
-                        ),
-                      ].expand(
-                        (widget) => [
-                          widget,
-                          const SizedBox(
-                            height: 24,
-                          )
-                        ],
-                      ),
-                      Text(
-                        'EXPRESSIVE WRITING:Your thoughts and feelings about cancer\n\nIn the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how is it related to other significant experiences in your life? Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important and significant for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                              'Timer: ' +
-                                  formatTime(_stopwatch.elapsedMilliseconds),
-                              style: TextStyle(
-                                  fontSize: 20.0,
-                                  background: Paint()
-                                    ..strokeWidth = 25.0
-                                    ..color = Colors.grey
-                                    ..style = PaintingStyle.stroke
-                                    ..strokeJoin = StrokeJoin.round)),
-                          // ElevatedButton(
-                          //     onPressed: handleStartStop,
-                          //     child: Text(
-                          //         _stopwatch.isRunning ? 'Stop' : 'Start')),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          filled: true,
-                          hintText: 'Write your thoughts and feelings...',
-                          //labelText: 'Description',
-                        ),
+          //alignment: Alignment.topCenter,
+          child: Card(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(12),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 550),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ...[
+                      _FormDatePicker(
+                        date: date,
                         onChanged: (value) {
-                          _stopwatch.start();
-                          description = value;
+                          setState(() {
+                            date = value;
+                          });
                         },
-                        maxLines: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: ElevatedButton(
-                          onPressed: () => {
-                            // Validate returns true if the form is valid, or false otherwise.
-                            if (_formKey.currentState!.validate())
-                              {
-                                _stopwatch.stop(),
-                                // If the form is valid, display a snackbar. In the real world,
-                                // you'd often call a server or save the information in a database.
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Processing Data')),
-                                ),
-                              }
-                          },
-                          child: const Text('Submit'),
-                        ),
+                    ].expand(
+                      (widget) => [
+                        widget,
+                        const SizedBox(
+                          height: 24,
+                        )
+                      ],
+                    ),
+                    Text(
+                      'EXPRESSIVE WRITING: Your thoughts and feelings about cancer\n\n',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                    ],
-                  ),
+                    ),
+                    Text(
+                      'In the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how is it related to other significant experiences in your life? Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important and significant for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 15,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                            'Timer: ' +
+                                formatTime(_stopwatch.elapsedMilliseconds),
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                background: Paint()
+                                  ..strokeWidth = 25.0
+                                  ..color = Colors.grey
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeJoin = StrokeJoin.round)),
+                        // ElevatedButton(
+                        //     onPressed: handleStartStop,
+                        //     child: Text(
+                        //         _stopwatch.isRunning ? 'Stop' : 'Start')),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        filled: true,
+                        hintText: 'Write your thoughts and feelings...',
+                        //labelText: 'Description',
+                      ),
+                      onChanged: (value) {
+                        _stopwatch.start();
+                        description = value;
+                      },
+                      maxLines: 19,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      child: ElevatedButton(
+                        onPressed: () => {
+                          // Validate returns true if the form is valid, or false otherwise.
+                          if (_formKey.currentState!.validate())
+                            {
+                              _stopwatch.stop(),
+                              // If the form is valid, display a snackbar. In the real world,
+                              // you'd often call a server or save the information in a database.
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Processing Data')),
+                              ),
+                            }
+                        },
+                        child: const Text('Submit',
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),
+                      ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -194,7 +236,10 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           children: [
             Text(
               'Date',
-              style: Theme.of(context).textTheme.bodyText1,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
             Text(
               intl.DateFormat.yMd().format(widget.date),

@@ -19,7 +19,7 @@ class BasePanel extends StatelessWidget {
                 offset: Offset(0, 1)),
           ],
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(30.0),
+              topRight: Radius.circular(5.0),
               topLeft: Radius.circular(5.0),
               bottomLeft: Radius.circular(5.0),
               bottomRight: Radius.circular(5.0)),
