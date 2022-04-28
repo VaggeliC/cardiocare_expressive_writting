@@ -4,7 +4,11 @@
 
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
 import 'package:cardiocare_expressive_writting/core/widgets/language_button.dart';
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/results_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/model/alert_util.dart';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'dart:async';
@@ -39,6 +43,10 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
   bool enableFeature = false;
   late Stopwatch _stopwatch;
   late Timer _timer;
+  RegExp regExp = RegExp(" ");
+  int wordcount = 0;
+
+
 
   @override
   void dispose() {
@@ -109,6 +117,30 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Text(
+                      'EXPRESSIVE WRITING: Your thoughts and feelings about cancer\n',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 19,
+                      ),
+                    ),
+                    Text(
+                      'In the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how is it related to other significant experiences in your life? Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important and significant for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 19,
+                      ),
+                    ),
+                    const Divider(
+                      height: 30,
+                      thickness: 1,
+                      indent: 0,
+                      endIndent: 0,
+                      color: AppTheme.black,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                     ...[
                       _FormDatePicker(
                         date: date,
@@ -119,29 +151,12 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                         },
                       ),
                     ].expand(
-                      (widget) => [
+                          (widget) => [
                         widget,
                         const SizedBox(
                           height: 24,
                         )
                       ],
-                    ),
-                    Text(
-                      'EXPRESSIVE WRITING: Your thoughts and feelings about cancer\n\n',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    Text(
-                      'In the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how is it related to other significant experiences in your life? Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important and significant for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 15,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -163,7 +178,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       ],
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 30,
                     ),
                     TextFormField(
                       decoration: const InputDecoration(
@@ -175,17 +190,28 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       onChanged: (value) {
                         _stopwatch.start();
                         description = value;
+
+                        if (kDebugMode) {
+                          wordcount = regExp.allMatches(value).length + 1;
+                          print(wordcount);
+
+                      }
                       },
-                      maxLines: 19,
+                      maxLines: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       child: ElevatedButton(
                         onPressed: () => {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState!.validate())
+                          if (_formKey.currentState!.validate() && wordcount > 0)
                             {
                               _stopwatch.stop(),
+                              print(formatTime(_stopwatch.elapsedMilliseconds)),
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) => ResultsScreen()))),
                               // If the form is valid, display a snackbar. In the real world,
                               // you'd often call a server or save the information in a database.
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -193,10 +219,18 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                                     content: Text('Processing Data')),
                               ),
                             }
+                          else{
+                          AlertUtil.showAlert(context, "Alert",
+                          "You have to write something in order for us to analyze.")
+                          }
                         },
-                        child: const Text('Submit',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),
-                      ),
+                        child: const Text(
+                          'Submit',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -235,15 +269,11 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'Date',
+              'Date: ' + intl.DateFormat.yMd().format(widget.date),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 20,
               ),
-            ),
-            Text(
-              intl.DateFormat.yMd().format(widget.date),
-              style: Theme.of(context).textTheme.subtitle1,
             ),
           ],
         ),
