@@ -46,8 +46,6 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
   RegExp regExp = RegExp(" ");
   int wordcount = 0;
 
-
-
   @override
   void dispose() {
     _timer.cancel();
@@ -151,7 +149,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                         },
                       ),
                     ].expand(
-                          (widget) => [
+                      (widget) => [
                         widget,
                         const SizedBox(
                           height: 24,
@@ -194,8 +192,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                         if (kDebugMode) {
                           wordcount = regExp.allMatches(value).length + 1;
                           print(wordcount);
-
-                      }
+                        }
                       },
                       maxLines: 15,
                     ),
@@ -204,7 +201,8 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       child: ElevatedButton(
                         onPressed: () => {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState!.validate() && wordcount > 0)
+                          if (_formKey.currentState!.validate() &&
+                              wordcount > 0)
                             {
                               _stopwatch.stop(),
                               print(formatTime(_stopwatch.elapsedMilliseconds)),
@@ -219,10 +217,11 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                                     content: Text('Processing Data')),
                               ),
                             }
-                          else{
-                          AlertUtil.showAlert(context, "Alert",
-                          "You have to write something in order for us to analyze.")
-                          }
+                          else
+                            {
+                              AlertUtil.showAlert(context, "Alert",
+                                  "You have to write something in order for us to analyze.")
+                            }
                         },
                         child: const Text(
                           'Submit',

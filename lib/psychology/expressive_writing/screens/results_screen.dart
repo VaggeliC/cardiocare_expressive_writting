@@ -111,7 +111,6 @@ class _ResultsScreenState extends State<ResultsScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
                     Text(
                       'EXPRESSIVE WRITING: Feedback                                          \n\n',
                       style: TextStyle(
@@ -149,7 +148,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         },
                       ),
                     ].expand(
-                          (widget) => [
+                      (widget) => [
                         widget,
                         const SizedBox(
                           height: 24,
@@ -207,10 +206,12 @@ class _ResultsScreenState extends State<ResultsScreen> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const <Widget>[
-                        Text('Your Writing\n\n                                                                                                ',style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        )),
+                        Text(
+                            'Your Writing\n\n                                                                                                ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            )),
                       ],
                     ),
                     const SizedBox(
