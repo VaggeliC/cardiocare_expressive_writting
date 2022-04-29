@@ -70,22 +70,22 @@
       "fallsMitigation": "Falls Mitigation"
     },
     "incontinence": {
-      "urinaryTitle": "Urinary Incontinence",
-      "urineTrack": "Urine Track",
+      "expressiveWritingTitle": "Urinary Incontinence",
+      "startWriting": "Urine Track",
       "reminders": "Reminders",
-      "pelvicFloorExercises": "Pelvic Floor Exercises",
-      "minutes": "1-4 MIN Exercises",
+      "howToStartWriting": "Pelvic Floor Exercises",
+      "duration": "1-4 MIN Exercises",
       "session": "Session",
       "instructions": "Instructions",
       "details": "Detailed instructions and pictures about pelvic floor exercises",
-      "urineTrackPage": {
-        "addEvent": "Add Event",
+      "formPage": {
+        "headerForm": "Add Event",
         "event": "Event",
-        "date": "Date",
+        "dateForm1": "Date",
         "eventLog": "Event Log",
-        "intensity": "Intensity",
-        "pickDate": "Pick the date",
-        "urination": "Urination",
+        "timerForm1": "Intensity",
+        "headerResult": "Pick the date",
+        "submit": "Urination",
         "leak": "Leak",
         "urge": "Urge",
         "etc": "Cough, Laugh, etc."
@@ -106,29 +106,43 @@
   "psychology": {
     "menu": {
       "title": "Psychology & Wellbeing",
-      "expressiveWriting": "Expressive Writing"
+      "expressiveWriting": "Expressive Writing",
+      "header": "Feeling overwhelmed by the Cancer? \n\n               Expressive Writing can Help",
+      "subheader1": "\nWhat is Expressive Writing?",
+      "text1": "\nExpressive writing is easy. Just sit down and write about something that is bothering you. It’s simple and there is no right or wrong way to do it.\n\nThis application gives you some ways to try out expressive writing to help you deal with the Cancer outbreak. By writing about your thoughts and feelings for as little as 5-10 minutes, you may change the ways you are thinking, feeling, and even sleeping.",
+      "subheader2": "\nWhat are the Benefits of Expressive Writing?",
+      "text2": "\nExpressive writing has been around for over 30 years. Hundreds of experiments have demonstrated its effectiveness in improving people’s mental and physical health. By putting emotional upheavals into words, we start to understand them better. Once we have a better handle on our problems, we can move forward and get on with life."
     },
     "expressiveWriting": {
-      "urinaryTitle": "Expressive Writing",
-      "urineTrack": "Start\nWriting",
-      "reminders": "Reminders",
-      "pelvicFloorExercises": "How to start writing",
-      "minutes": "Duration: 5-10 Minutes",
+      "expressiveWritingTitle": "Expressive Writing",
+      "startWriting": "Start\nWriting",
+      "reminders": "Reminders\n",
+      "howToStartWriting": "How to start writing",
+      "duration": "Duration: 5-10 Minutes",
       "session": "Session",
       "instructions": "Instructions",
       "details": "To start, plan to spend at least 5-10 minutes (or longer, if you want) writing about one of the topics below. The basic instructions are for you to write about your deepest thoughts and feelings about the topic without worrying about spelling, grammar, or sentence structure. Just write.",
-      "urineTrackPage": {
-        "addEvent": "Add Event",
-        "event": "Event",
-        "date": "Date",
+      "formPage": {
+        "headerForm": "EXPRESSIVE WRITING: Your thoughts and feelings about cancer\n",
+        "textForm1": "In the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.",
+        "dateForm1": "Date: ",
         "eventLog": "Event Log",
-        "intensity": "Intensity",
-        "pickDate": "Pick the date",
-        "urination": "Urination",
+        "timerForm1": "Timer: ",
+        "submit": "Submit",
         "leak": "Leak",
         "urge": "Urge",
         "etc": "Cough, Laugh, etc."
       },
+
+      "resultPage": {
+        "headerResult": "EXPRESSIVE WRITING: Feedback                                          \n\n",
+        "textResult": "For this writing exercise, you were asked to write 5-10 minutes about your deepest thoughts and feelings about Your Thoughts And Feelings About Cancer . Before looking at your feedback, it’s important that you know that you are the real judge of your writing. Did you find it helpful? Are you thinking about the topic in a different way than when you started?",
+        "dateResult": "Date: ",
+        "timeTaken": "Time Taken: ",
+        "wordCount": "Word Count: ",
+        "yourWriting": "Your Writing\n\n                                                                                                "
+      },
+
       "addReminder": {
         "title": "Pelvic Floor Reminders",
         "yourReminders": "Your Reminders",

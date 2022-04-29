@@ -13,30 +13,28 @@ import '../services/notification_api.dart';
 import '../widgets/alarm_tile.dart';
 import 'ew_add_reminder.dart';
 
-class EWReminderPage extends StatefulWidget {
-  const EWReminderPage({Key? key}) : super(key: key);
+class ReminderPage extends StatefulWidget {
+  const ReminderPage({Key? key}) : super(key: key);
 
   @override
-  State<EWReminderPage> createState() => _EWReminderPageState();
+  State<ReminderPage> createState() => _ReminderPageState();
 }
 
-class _EWReminderPageState extends State<EWReminderPage> {
+class _ReminderPageState extends State<ReminderPage> {
   final onNotifications = BehaviorSubject<String?>();
-
 
   @override
   void initState() {
     super.initState();
     NotificationApi.init(initScheduled: true);
-   }
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: AppTheme.background,
       // resizeToAvoidBottomInset: true,
-      appBar:  AppBar(
+      appBar: AppBar(
         actions: [
           IconButton(
             padding: EdgeInsets.all(0),
@@ -48,17 +46,20 @@ class _EWReminderPageState extends State<EWReminderPage> {
           LanguageButton(),
         ],
         iconTheme: IconThemeData(color: AppTheme.black),
-         // iconTheme: IconThemeData(color:  Color(0xFF17262A)),
-          backgroundColor: AppTheme.background,
-         // automaticallyImplyLeading: false,
+        // iconTheme: IconThemeData(color:  Color(0xFF17262A)),
+        backgroundColor: AppTheme.background,
+        // automaticallyImplyLeading: false,
         centerTitle: true,
-          title: Text('psychology.expressiveWriting.addReminder.title',style: TextStyle(color: AppTheme.black),).tr(),
-     /*    shape:RoundedRectangleBorder(
+        title: Text(
+          'geriatric.expressive_writing.addReminder.title',
+          style: TextStyle(color: AppTheme.black),
+        ).tr(),
+        /*    shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(15),
           ),), */
-        ),
-        /*drawer: Drawer(
+      ),
+      /*drawer: Drawer(
                child: Column(
             children: [
               Container(
@@ -87,7 +88,7 @@ class _EWReminderPageState extends State<EWReminderPage> {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              content: EWAddReminder(),
+              content: AddReminder(),
             ),
           );
         },
@@ -99,14 +100,15 @@ class _EWReminderPageState extends State<EWReminderPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(height: 20.0,),
+          SizedBox(
+            height: 20.0,
+          ),
           Text(
-            'psychology.expressiveWriting.addReminder.yourReminders'.tr(),
+            'geriatric.expressive_writing.addReminder.yourReminders'.tr(),
             style: TextStyle(
-              fontSize: 25.0,
-              fontWeight: FontWeight.bold,
-              color: AppTheme.black
-            ),
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+                color: AppTheme.black),
           ),
           SizedBox(
             height: 10.0,
@@ -147,7 +149,6 @@ class _EWReminderPageState extends State<EWReminderPage> {
                               Provider.of<Data>(context, listen: false)
                                   .allAlarms[index]
                                   .values));
-
                     }
                   },
                   timeOfDay:

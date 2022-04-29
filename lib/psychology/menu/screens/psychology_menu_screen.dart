@@ -25,35 +25,35 @@ class PsychologyMenuScreen extends StatelessWidget {
         ),
         SizedBox(
           child: Text(
-            'Feeling overwhelmed by the Cancer? \n\n               Expressive Writing can Help',
+            'psychology.menu.header'.tr(),
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
-          height: 100,
+          height: 120,
         ),
         SizedBox(
           child: Text(
-            '\nWhat is Expressive Writing?',
+            'psychology.menu.subheader1'.tr(),
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
           //height: 100,
         ),
         SizedBox(
           child: Text(
-            '\nExpressive writing is easy. Just sit down and write about something that is bothering you. It’s simple and there is no right or wrong way to do it.\n\nThis application gives you some ways to try out expressive writing to help you deal with the Cancer outbreak. By writing about your thoughts and feelings for as little as 5-10 minutes, you may change the ways you are thinking, feeling, and even sleeping.',
+            'psychology.menu.text1'.tr(),
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
           ),
           //height: 100,
         ),
         SizedBox(
           child: Text(
-            '\nWhat are the Benefits of Expressive Writing?',
+            'psychology.menu.subheader2'.tr(),
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
           //height: 100,
         ),
         SizedBox(
           child: Text(
-            '\nExpressive writing has been around for over 30 years. Hundreds of experiments have demonstrated its effectiveness in improving people’s mental and physical health. By putting emotional upheavals into words, we start to understand them better. Once we have a better handle on our problems, we can move forward and get on with life.\n\nThese pages were designed as coping tools for people who are trying to deal with the Cancer outbreak. In reality, expressive writing can work for any issues you may be thinking or worrying about - major or minor.',
+            'psychology.menu.text2'.tr(),
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
           ),
           //height: 100,
@@ -80,7 +80,7 @@ class PsychologyMenuScreen extends StatelessWidget {
                   },
                   icon: Icons.create_sharp,
                   label: 'psychology.menu.expressiveWriting'.tr(),
-                  primaryColor: AppTheme.green,
+                  primaryColor: AppTheme.blue,
                 ),
                 // CardButton(
                 //   onPressed: () {},

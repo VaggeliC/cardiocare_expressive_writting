@@ -93,7 +93,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
         // automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
-          'psychology.expressiveWriting.urinaryTitle',
+          'psychology.expressiveWriting.expressiveWritingTitle',
           style: TextStyle(fontSize: 25, color: AppTheme.black),
         ).tr(),
         /*  shape: const RoundedRectangleBorder(
@@ -116,28 +116,28 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'EXPRESSIVE WRITING: Your thoughts and feelings about cancer\n',
+                      'psychology.expressiveWriting.formPage.headerForm',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 19,
                       ),
-                    ),
+                    ).tr(),
                     Text(
-                      'In the box below, explore your thoughts and feelings about cancer in as much detail as you can. Try to let go and just write for at least 5-10 minutes (or longer if you want). You might write about how the outbreak is affecting you and the people around you. Or how is it related to other significant experiences in your life? Or how are you dealing with feelings such as anxiety or isolation? Really try to address those issues most important and significant for you. Please write continuously for the entire time, and don’t worry too much about spelling or punctuation errors.\n\nAll information will be kept anonymous and confidential.',
+                      'psychology.expressiveWriting.formPage.textForm1',
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 19,
                       ),
-                    ),
+                    ).tr(),
                     const Divider(
-                      height: 30,
+                      height: 20,
                       thickness: 1,
                       indent: 0,
                       endIndent: 0,
                       color: AppTheme.black,
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 0,
                     ),
                     ...[
                       _FormDatePicker(
@@ -152,7 +152,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       (widget) => [
                         widget,
                         const SizedBox(
-                          height: 24,
+                          height: 22,
                         )
                       ],
                     ),
@@ -160,7 +160,8 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                            'Timer: ' +
+                            'psychology.expressiveWriting.formPage.timerForm1'
+                                    .tr() +
                                 formatTime(_stopwatch.elapsedMilliseconds),
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -182,7 +183,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         filled: true,
-                        hintText: 'Write your thoughts and feelings...',
+                        //hintText: 'Write your thoughts and feelings...',
                         //labelText: 'Description',
                       ),
                       onChanged: (value) {
@@ -194,10 +195,10 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                           print(wordcount);
                         }
                       },
-                      maxLines: 15,
+                      maxLines: 14,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
                       child: ElevatedButton(
                         onPressed: () => {
                           // Validate returns true if the form is valid, or false otherwise.
@@ -223,14 +224,23 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                                   "You have to write something in order for us to analyze.")
                             }
                         },
+                        style: ElevatedButton.styleFrom(
+                            primary: AppTheme.blue,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 40, vertical: 15),
+                            textStyle: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold)),
                         child: const Text(
-                          'Submit',
+                          'psychology.expressiveWriting.formPage.submit',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
-                        ),
+                        ).tr(),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 50,
                     ),
                   ],
                 ),
@@ -268,7 +278,8 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'Date: ' + intl.DateFormat.yMd().format(widget.date),
+              'psychology.expressiveWriting.formPage.dateForm1'.tr() +
+                  intl.DateFormat.yMd().format(widget.date),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,

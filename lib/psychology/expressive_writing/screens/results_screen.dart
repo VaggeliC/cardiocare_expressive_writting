@@ -89,7 +89,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
         // automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
-          'psychology.expressiveWriting.urinaryTitle',
+          'psychology.expressiveWriting.expressiveWritingTitle',
           style: TextStyle(fontSize: 25, color: AppTheme.black),
         ).tr(),
         /*  shape: const RoundedRectangleBorder(
@@ -112,19 +112,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'EXPRESSIVE WRITING: Feedback                                          \n\n',
+                      'psychology.expressiveWriting.resultPage.headerResult',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
-                    ),
+                    ).tr(),
                     Text(
-                      'For this writing exercise, you were asked to write 5-10 minutes about your deepest thoughts and feelings about Your Thoughts And Feelings About Cancer . Before looking at your feedback, it’s important that you know that you are the real judge of your writing. Did you find it helpful? Are you thinking about the topic in a different way than when you started?',
+                      'psychology.expressiveWriting.resultPage.textResult',
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 20,
                       ),
-                    ),
+                    ).tr(),
                     const SizedBox(
                       height: 20,
                     ),
@@ -162,7 +162,8 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                            'Time Taken: ' +
+                            'psychology.expressiveWriting.resultPage.timeTaken'
+                                    .tr() +
                                 formatTime(_stopwatch.elapsedMilliseconds) +
                                 '                                                                                           ',
                             style: TextStyle(
@@ -180,9 +181,10 @@ class _ResultsScreenState extends State<ResultsScreen> {
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Text(
-                            'Word Count: ' +
+                            'psychology.expressiveWriting.resultPage.wordCount'
+                                    .tr() +
                                 '                                                                                                                   ',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -205,9 +207,10 @@ class _ResultsScreenState extends State<ResultsScreen> {
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Text(
-                            'Your Writing\n\n                                                                                                ',
+                            'psychology.expressiveWriting.resultPage.yourWriting'
+                                .tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -263,7 +266,8 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'Date: ' + intl.DateFormat.yMd().format(widget.date),
+              'psychology.expressiveWriting.resultPage.dateResult'.tr() +
+                  intl.DateFormat.yMd().format(widget.date),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,

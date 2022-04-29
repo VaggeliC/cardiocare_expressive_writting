@@ -9,7 +9,6 @@ class AlertUtil {
       actions: [
         ElevatedButton(
             onPressed: () {
-              print("alert_util --> Mphka");
               Navigator.of(context).pop();
             },
             child: Text(buttonText)),

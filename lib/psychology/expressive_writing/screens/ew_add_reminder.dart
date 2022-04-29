@@ -3,7 +3,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
 import 'package:cardiocare_expressive_writting/geriatric/incontinence/screens/home_screen.dart';
-import 'package:cardiocare_expressive_writting/geriatric/incontinence/screens/reminders_page.dart';
+import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/ew_add_reminder.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -16,12 +16,12 @@ import '../widgets/my_input_field.dart';
 
 List<bool> findRemindedDays = [];
 
-class EWAddReminder extends StatefulWidget {
+class AddReminder extends StatefulWidget {
   @override
-  State<EWAddReminder> createState() => _EWAddReminderState();
+  State<AddReminder> createState() => _AddReminderState();
 }
 
-class _EWAddReminderState extends State<EWAddReminder> {
+class _AddReminderState extends State<AddReminder> {
   List<bool> listOfBools = List.filled(7, false);
 
   List<String> listOfBoolsconverted = [];
@@ -34,6 +34,7 @@ class _EWAddReminderState extends State<EWAddReminder> {
   final TextEditingController _textEditingController = TextEditingController();
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _timeController = TextEditingController();
+
   // const AddReminder({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -43,22 +44,23 @@ class _EWAddReminderState extends State<EWAddReminder> {
         child: Column(
           children: [
             Text(
-              'psychology.expressiveWriting.addReminder.addReminder'.tr(),
+              'geriatric.expressive_writing.addReminder.addReminder'.tr(),
               style: TextStyle(
                 fontSize: 25.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             MyInputField(
-              title: 'psychology.expressiveWriting.addReminder.titleReminder'.tr(),
-              hint: 'psychology.expressiveWriting.addReminder.enterTitle'.tr(),
+              title:
+                  'geriatric.expressive_writing.addReminder.titleReminder'.tr(),
+              hint: 'geriatric.expressive_writing.addReminder.enterTitle'.tr(),
               controller: _textEditingController,
             ),
             SizedBox(
               height: 10.0,
             ),
             Text(
-              'psychology.expressiveWriting.addReminder.weekday',
+              'geriatric.expressive_writing.addReminder.weekday',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -74,9 +76,9 @@ class _EWAddReminderState extends State<EWAddReminder> {
               values: listOfBools,
             ),
             MyInputField(
-              title: 'psychology.expressiveWriting.addReminder.time'.tr(),
+              title: 'geriatric.expressive_writing.addReminder.time'.tr(),
               // hint: _startTime,
-              hint: 'psychology.expressiveWriting.addReminder.enterTimeOf'.tr(),
+              hint: 'geriatric.expressive_writing.addReminder.enterTimeOf'.tr(),
               controller: _timeController,
               widget: IconButton(
                 onPressed: () {
@@ -129,13 +131,13 @@ class _EWAddReminderState extends State<EWAddReminder> {
                       weekdays: weekdays);
 
                   Navigator.pop(context);
-
                 }
               },
               child: Text(
-                'psychology.expressiveWriting.addReminder.add',
+                'geriatric.expressive_writing.addReminder.add',
                 style: TextStyle(
-                  color: AppTheme.white,fontSize: 28,
+                  color: AppTheme.white,
+                  fontSize: 28,
                 ),
               ).tr(),
             )
