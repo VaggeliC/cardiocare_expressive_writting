@@ -82,12 +82,6 @@ class PsychologyMenuScreen extends StatelessWidget {
                   label: 'psychology.menu.expressiveWriting'.tr(),
                   primaryColor: AppTheme.blue,
                 ),
-                // CardButton(
-                //   onPressed: () {},
-                //   icon: Icons.directions_walk,
-                //   label: 'Falls Mitigation',
-                //   primaryColor: AppTheme.purple,
-                // ),
               ],
             ))
           ],

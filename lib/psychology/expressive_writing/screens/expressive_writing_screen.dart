@@ -1,12 +1,9 @@
 // TODO Implement this library.// ignore_for_file: prefer_const_constructors
+import 'package:cardiocare_expressive_writting/geriatric/incontinence/screens/reminders_page.dart';
 import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/form_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../core/utilities/app_theme.dart';
 import '../../../core/widgets/language_button.dart';
-import '../../../geriatric/incontinence/screens/pelvicexercises.dart';
-import '../../../psychology/expressive_writing/screens/ew_reminders_page.dart';
-import '../../../geriatric/incontinence/screens/urinetrack.dart';
-import '../screens/ew_reminders_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../utilities/constantscolors.dart';
@@ -19,18 +16,9 @@ class ExpressiveWritingScreen extends StatefulWidget {
       _ExpressiveWritingScreenState();
 }
 
-// Drawer kai metavash sthn demographics page mas.
 class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
-  // Initiate ta dedomena poy diavasame apo ta 2 json(heart_rate_reads & responses_calories_read)
-  // Auto ginetai edw mesw tis initState gia na mporoume na ta "Exoume" kai meta stis alles klaseis
-  // poy kanoume navigate + oti ta xreiazomaste apo to homescreen gia na exoume ta graphs synced me vash ta JSON
-  // edw sta Preview kathe staggeredGridview
-
   @override
   void initState() {
-    //print(chartData);
-    // print(chartData2[6].steps);
-
     super.initState();
   }
 
@@ -65,33 +53,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
           ),
         ),*/
       ),
-      /*drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              height: 130,
-              width: double.infinity,
-              padding:  EdgeInsets.all(20),
-              alignment: Alignment.centerLeft,
-              color: Colors.blueGrey[500], //χρωμα του header του drawer
-              // decoration:BoxDecoration(color:Colors.blue), διαφορετικος τροπος να περασουμε χρωμα
-              child:  Text(
-                "Cardiocare",
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 30,
-                ),
-              ),
-            ),
-            ListTile(
-                title:  Text("Home"),
-                leading:  Icon(Icons.home),
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, '/home_screen');
-                }),
-          ],
-        ),
-      ),*/
       body: ListView(
         children: [
           SizedBox(height: 10),
@@ -114,11 +75,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
                                 colors: [
-                                  //Color(0xFFd9d9d9),
-                                  // Color(0xFFd9d9d9),
-                                  // Colors.white,
-                                  // Color(0xFFd9d9d9),
-
                                   AppTheme.blue,
                                   AppTheme.blue,
                                   AppTheme.blue,
@@ -177,7 +133,7 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => FormWidgetsDemo())));
+                                  builder: ((context) => ExpressiveWritingForm())));
                         }
                       }),
                 ),
@@ -205,33 +161,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                               ),
-                              /*gradient: const LinearGradient(
-                                                colors: [
-
-                                                   Color(0xFFD86D30),
-                                                  Color(0xFFf27710),
-                                                  Color(0xFFf27710),
-                                                  Color(0xFFD86D30),
-                                                 /* Color(0xFF2b1d95),
-                                                  Color(0xFF5d3d91),
-                                                  Color(0xFF5d3d91),
-                                                  Color(0xFF2b1d95),*/
-                                                  // Color(0xFFd9d9d9),
-                                                  // Color(0xFFd9d9d9),
-                                                   //Colors.white,
-                                                  // Color(0xFFd9d9d9),
-                                                 /* Color(0xFF1E1466),
-                                                  Color(0xFF2b1d95),
-                                                  Color(0xFF251980),
-                                                  Color(0xFF1E1466),*/
-                                                  //Colors.red,
-                                                  //Colors.redAccent
-                                                ],
-                                                begin: FractionalOffset(0.0, 0.0),
-                                                end: FractionalOffset(1.0, 0.0),
-                                                stops: [0.0,0.2,0.8,1],
-                                                tileMode: TileMode.clamp,
-                                            ),*/
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Padding(
@@ -293,27 +222,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
             endIndent: 20,
             color: AppTheme.black,
           ),
-          //Text("", style:TextStyle(color:Color(0xFF17262A ),fontSize:30, fontWeight: FontWeight.bold)),
-          /* Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child:  SizedBox(
-                          height: 80.0,
-                          child: ElevatedButton(
-                                        child: const Text('About Pelvic Floor Exercises',
-                                        style:TextStyle(
-                                              color: Colors.white,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),),
-                                        onPressed: () {},
-                                        style: ElevatedButton.styleFrom(
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-                                            primary: const Color(0xFF999999),
-                                           // padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                                            ),
-                            ),
-                            ),
-
-                  ),    */
           SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -389,18 +297,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
                                       MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    //   Text(
-                                    //   "About",
-                                    //   style: Theme.of(context).textTheme.subtitle1,
-                                    //  ),
-                                    /* const Divider(
-                                              height: 20,
-                                              thickness: 1,
-                                              indent: 0,
-                                              endIndent: 20,
-                                              color: Colors.grey,
-                                            ),
-                                            */
                                     Text("psychology.expressiveWriting.details",
                                             style: Theme.of(context)
                                                 .textTheme
@@ -442,47 +338,6 @@ class _ExpressiveWritingScreenState extends State<ExpressiveWritingScreen> {
               ),
             ),
           ),
-
-          //  customElevatedButton("Exercise 1",0xFF999999,0xFF36ad83, '/pelvicexercises'),
-          //  customElevatedButton("Exercise 2",0xFF2b8a68,0xFF36ad83, '/pelvicexercises'),
-          //  customElevatedButton("Exercise 3",0xFF36ad83,0xFF786696, '/pelvicexercises'),
-          //   customElevatedButton("Exercise 4",0xFF786696,0xFFD86D30, '/pelvicexercises'),
-          //   customElevatedButton("Exercise 5",0xFFD86D30,0xFFc2185b, '/pelvicexercises'),
-          //   customElevatedButton("Exercise 6",0xFFc2185b,0xFFc2185b, '/pelvicexercises'),
-          /*ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60.0)),
-                             padding: const EdgeInsets.all(0.0),
-                          ),
-                          onPressed: () {},
-
-                          child: Ink(
-                            decoration: BoxDecoration(
-                                gradient: const LinearGradient(colors: [Color(0xFFEDF0F2), Color(0xFF2b8a68)],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                ),
-                                borderRadius: BorderRadius.circular(30.0)
-                            ),
-                            child: Container(
-                              constraints: const BoxConstraints(maxWidth: 400.0, minHeight: 50.0),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                "Exercise 1",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-
-                  ElevatedButton(onPressed: (){ Navigator.pushReplacementNamed(context, '/urinetrack');}, child: const Text('Urine Track'),),
-                  ElevatedButton(onPressed: (){ Navigator.pushReplacementNamed(context, '/pelvicexercises');}, child: const Text('Pelvic Floor Exercises'),),
-                  ElevatedButton(onPressed: (){}, child: const Text('Alerts'),),
-                  ElevatedButton(onPressed: (){}, child: const Text('About Pelvic Floor Exercises'),)*/
         ],
       ),
     );

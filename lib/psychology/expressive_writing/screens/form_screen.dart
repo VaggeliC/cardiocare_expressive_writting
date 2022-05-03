@@ -1,7 +1,3 @@
-// Copyright 2020, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
 import 'package:cardiocare_expressive_writting/core/widgets/language_button.dart';
 import 'package:cardiocare_expressive_writting/psychology/expressive_writing/screens/results_screen.dart';
@@ -12,16 +8,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'dart:async';
-import 'package:cardiocare_expressive_writting/core/widgets/app.dart';
-import 'package:cardiocare_expressive_writting/psychology/expressive_writing/services/data.dart';
 
 import '../utilities/constantscolors.dart';
 
-class FormWidgetsDemo extends StatefulWidget {
-  const FormWidgetsDemo({Key? key}) : super(key: key);
+class ExpressiveWritingForm extends StatefulWidget {
+  const ExpressiveWritingForm({Key? key}) : super(key: key);
 
   @override
-  _FormWidgetsDemoState createState() => _FormWidgetsDemoState();
+  _ExpressiveWritingFormState createState() => _ExpressiveWritingFormState();
 }
 
 String formatTime(int milliseconds) {
@@ -33,7 +27,7 @@ String formatTime(int milliseconds) {
   return "$hours:$minutes:$seconds";
 }
 
-class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
+class _ExpressiveWritingFormState extends State<ExpressiveWritingForm> {
   final _formKey = GlobalKey<FormState>();
   String title = '';
   String description = '';
@@ -56,7 +50,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
   void initState() {
     super.initState();
     _stopwatch = Stopwatch();
-    _timer = new Timer.periodic(new Duration(milliseconds: 30), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 30), (timer) {
       setState(() {});
     });
   }
@@ -96,11 +90,6 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
           'psychology.expressiveWriting.expressiveWritingTitle',
           style: TextStyle(fontSize: 25, color: AppTheme.black),
         ).tr(),
-        /*  shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(15),
-          ),
-        ),*/
       ),
       body: Form(
         key: _formKey,
@@ -116,14 +105,14 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'psychology.expressiveWriting.formPage.headerForm',
+                      'psychology.expressiveWriting.formPage.header',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 19,
                       ),
                     ).tr(),
                     Text(
-                      'psychology.expressiveWriting.formPage.textForm1',
+                      'psychology.expressiveWriting.formPage.text',
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 19,
@@ -160,8 +149,7 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                            'psychology.expressiveWriting.formPage.timerForm1'
-                                    .tr() +
+                            'psychology.expressiveWriting.formPage.timer'.tr() +
                                 formatTime(_stopwatch.elapsedMilliseconds),
                             style: TextStyle(
                                 fontSize: 20.0,
@@ -170,10 +158,6 @@ class _FormWidgetsDemoState extends State<FormWidgetsDemo> {
                                   ..color = Colors.grey
                                   ..style = PaintingStyle.stroke
                                   ..strokeJoin = StrokeJoin.round)),
-                        // ElevatedButton(
-                        //     onPressed: handleStartStop,
-                        //     child: Text(
-                        //         _stopwatch.isRunning ? 'Stop' : 'Start')),
                       ],
                     ),
                     const SizedBox(
@@ -278,7 +262,7 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'psychology.expressiveWriting.formPage.dateForm1'.tr() +
+              'psychology.expressiveWriting.formPage.date'.tr() +
                   intl.DateFormat.yMd().format(widget.date),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -287,24 +271,6 @@ class _FormDatePickerState extends State<_FormDatePicker> {
             ),
           ],
         ),
-        // TextButton(
-        //   //child: const Text('Edit'),
-        //   onPressed: () async {
-        //     var newDate = await showDatePicker(
-        //       context: context,
-        //       initialDate: widget.date,
-        //       firstDate: DateTime(1900),
-        //       lastDate: DateTime(2100),
-        //     );
-        //
-        //     // Don't change the date if the date picker returns null.
-        //     if (newDate == null) {
-        //       return;
-        //     }
-        //
-        //     widget.onChanged(newDate);
-        //   },
-        // )
       ],
     );
   }

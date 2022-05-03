@@ -1,7 +1,3 @@
-// Copyright 2020, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'package:cardiocare_expressive_writting/core/utilities/app_theme.dart';
 import 'package:cardiocare_expressive_writting/core/widgets/language_button.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -9,9 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'dart:async';
-import 'form_screen.dart';
-import 'package:cardiocare_expressive_writting/core/widgets/app.dart';
-import 'package:cardiocare_expressive_writting/psychology/expressive_writing/services/data.dart';
 
 import '../utilities/constantscolors.dart';
 
@@ -92,11 +85,6 @@ class _ResultsScreenState extends State<ResultsScreen> {
           'psychology.expressiveWriting.expressiveWritingTitle',
           style: TextStyle(fontSize: 25, color: AppTheme.black),
         ).tr(),
-        /*  shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(15),
-          ),
-        ),*/
       ),
       body: Form(
         key: _formKey,
@@ -112,14 +100,14 @@ class _ResultsScreenState extends State<ResultsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'psychology.expressiveWriting.resultPage.headerResult',
+                      'psychology.expressiveWriting.resultPage.header',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                     ).tr(),
                     Text(
-                      'psychology.expressiveWriting.resultPage.textResult',
+                      'psychology.expressiveWriting.resultPage.text',
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 20,
@@ -170,10 +158,6 @@ class _ResultsScreenState extends State<ResultsScreen> {
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             )),
-                        // ElevatedButton(
-                        //     onPressed: handleStartStop,
-                        //     child: Text(
-                        //         _stopwatch.isRunning ? 'Stop' : 'Start')),
                       ],
                     ),
                     const SizedBox(
@@ -266,7 +250,7 @@ class _FormDatePickerState extends State<_FormDatePicker> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'psychology.expressiveWriting.resultPage.dateResult'.tr() +
+              'psychology.expressiveWriting.resultPage.date'.tr() +
                   intl.DateFormat.yMd().format(widget.date),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -275,24 +259,6 @@ class _FormDatePickerState extends State<_FormDatePicker> {
             ),
           ],
         ),
-        // TextButton(
-        //   //child: const Text('Edit'),
-        //   onPressed: () async {
-        //     var newDate = await showDatePicker(
-        //       context: context,
-        //       initialDate: widget.date,
-        //       firstDate: DateTime(1900),
-        //       lastDate: DateTime(2100),
-        //     );
-        //
-        //     // Don't change the date if the date picker returns null.
-        //     if (newDate == null) {
-        //       return;
-        //     }
-        //
-        //     widget.onChanged(newDate);
-        //   },
-        // )
       ],
     );
   }
